@@ -47,7 +47,7 @@ command! OXtermColorTable call <SID>XtermColorTable('edit') | only
 
 augroup XtermColorTable
     autocmd!
-    autocmd BufNewFile  __XtermColorTable__ call <SID>ColorTable()
+    autocmd BufNewFile  __XtermColorTable__ set filetype=xtermcolortable | call <SID>ColorTable()
     autocmd ColorScheme *                   silent! doautoall XtermColorTableBuffer ColorScheme
 augroup END
 
@@ -67,6 +67,7 @@ function! s:XtermColorTable(...)
 
     " Open extant buffer
     execute open . ' +buffer' . bufid
+	set filetype=xtermcolor
 endfunction
 
 function! s:ColorTable()
