@@ -23,11 +23,13 @@
 "   * http://www.vim.org/scripts/script.php?script_id=664
 
 
-command! XtermColorTable  call s:XtermColorTable()
+command! -nargs=? XtermColorTable  call s:XtermColorTable(<f-args>)
 
 
-function! s:XtermColorTable()
-	exec 'tabnew __XtermColorTable__'
+function! s:XtermColorTable(...)
+	let open = a:0 ? a:1 : "tabnew"
+
+	exec open . '__XtermColorTable__'
 
 	if &modifiable
 		call s:create_table()

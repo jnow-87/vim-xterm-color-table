@@ -12,7 +12,10 @@
 Commands
 
 							*:XtermColorTable*
-:XtermColorTable	Open color table
+:XtermColorTable [mode]
+	Open color table using the specified [mode]. [mode] can be command to
+	open/enter a buffer, e.g. tabnew, edit, split. The default [mode] is
+	tabnew.
 
 
  vim:tw=78:sw=8:ts=8:sts=8:noet:ft=help:norl:
